@@ -25,10 +25,10 @@ function Article({ match }) {
   if (!loader) {
     const bodyArr = article.body.split("\r\n");
     const body = bodyArr.map((sentence, i) => (
-      <Fragment key={i}>
-        <p>{sentence}</p>
-        {i === bodyArr.length - 1 && <br />}
-      </Fragment>
+      <p>
+        {sentence}
+        {i < bodyArr.length - 1 && <br />}
+      </p>
     ));
     const image = article.imageUrl ? (
       <img src={`/${article.imageUrl}`} alt={article.title} />

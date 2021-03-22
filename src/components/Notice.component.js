@@ -24,10 +24,10 @@ function Notice({ match }) {
   if (!loader) {
     const bodyArr = notice.body.split("\r\n");
     const body = bodyArr.map((sentence, i) => (
-      <Fragment key={i}>
-        <p>{sentence}</p>
-        {i === bodyArr.length - 1 && <br />}
-      </Fragment>
+      <p>
+        {sentence}
+        {i < bodyArr.length - 1 && <br />}
+      </p>
     ));
     content = (
       <Fragment>
