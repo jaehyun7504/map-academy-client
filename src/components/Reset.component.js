@@ -27,7 +27,7 @@ function Reset({ show, submit, hideReset }) {
       email: "",
     });
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 1000);
+    setTimeout(() => setSubmitted(false), 5000);
   };
 
   return (
