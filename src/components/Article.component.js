@@ -3,6 +3,8 @@ import useStyles from "../styles/Article.styles";
 import Loader from "./Loader.component";
 import Footer from "./Footer.component";
 
+const IMAGE_URL = "https://mapacademy.s3.ap-northeast-2.amazonaws.com/";
+
 function Article({ match }) {
   const classes = useStyles();
   const [article, setArticle] = useState({});
@@ -31,7 +33,7 @@ function Article({ match }) {
       </p>
     ));
     const image = article.imageUrl ? (
-      <img src={`/${article.imageUrl}`} alt={article.title} />
+      <img src={`${IMAGE_URL}${article.imageUrl}`} alt={article.title} />
     ) : null;
     content = (
       <Fragment>

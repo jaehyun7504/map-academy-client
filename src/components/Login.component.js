@@ -31,7 +31,7 @@ function Login({ show, submit, hideLogin, showReset }) {
       password: "",
     });
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 1000);
+    setTimeout(() => setSubmitted(false), 5000);
   };
 
   return (
