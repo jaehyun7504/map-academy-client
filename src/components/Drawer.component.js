@@ -34,11 +34,12 @@ function MenuDrawer(props) {
       <List>
         {items.map((item) => (
           <ListItem
+            className={classes.item}
             button
             key={item.name}
             onClick={() => props.history.push(item.link)}
           >
-            <ListItemText primary={item.name} />
+            <ListItemText disableTypography primary={item.name} />
           </ListItem>
         ))}
       </List>
@@ -47,7 +48,9 @@ function MenuDrawer(props) {
 
   return (
     <div className={classes.MenuDrawer}>
-      <Button onClick={toggleDrawer(true)}>메뉴</Button>
+      <Button onClick={toggleDrawer(true)} disableRipple>
+        <i className="fas fa-bars"></i>
+      </Button>
       <Drawer anchor="bottom" open={state.show} onClose={toggleDrawer(false)}>
         {list("bottom")}
       </Drawer>

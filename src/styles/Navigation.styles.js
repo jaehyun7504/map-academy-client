@@ -15,12 +15,16 @@ const useStyles = makeStyles({
     justifyContent: "space-between",
     alignItems: "center",
   },
-  item: {},
   link: {
     textDecoration: "none",
+    color: "#f5f5f7",
+    opacity: "0.8",
+    transition: "opacity 0.1s ease-out",
     cursor: "pointer",
   },
-  linkActive: {},
+  linkActive: {
+    opacity: "0.9",
+  },
 });
 
 export default useStyles;

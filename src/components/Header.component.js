@@ -81,12 +81,30 @@ function Header() {
   };
 
   return (
-    <header className={classes.Header}>
-      <Link className={classes.logo} to="/about">
-        MAP ACADEMY
-      </Link>
-      <Drawer />
-      <Navigation />
+    <>
+      <header className={classes.Header}>
+        <div className={classes.container}>
+          <Drawer />
+          <Link className={classes.logo} to="/about">
+            MAP ACADEMY
+          </Link>
+          <Navigation />
+          <button
+            className={`${classes.button} ${classes.login}`}
+            type="button"
+            onClick={showLogin}
+          >
+            Sign in
+          </button>
+          <button
+            className={`${classes.button} ${classes.signout}`}
+            type="button"
+            onClick={handleSignout}
+          >
+            Sign out
+          </button>
+        </div>
+      </header>
       <Login
         show={show}
         submit={submit}
@@ -94,13 +112,7 @@ function Header() {
         showReset={showReset}
       />
       <Reset show={reset} submit={submitReset} hideReset={hideReset} />
-      <button className={classes.login} type="button" onClick={showLogin}>
-        로그인
-      </button>
-      <button className={classes.signout} type="button" onClick={handleSignout}>
-        로그아웃
-      </button>
-    </header>
+    </>
   );
 }
 
