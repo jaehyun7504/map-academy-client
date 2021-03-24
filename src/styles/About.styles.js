@@ -18,28 +18,47 @@ const useStyles = makeStyles({
     opacity: "0.9",
     letterSpacing: "1px",
     marginBottom: "3rem",
+    [sizes.down("sm")]: {
+      fontSize: "4.4rem",
+    },
   },
   h2: {
     fontFamily: "Comfortaa, NanumBarunGothic",
     fontSize: "3.6rem",
     fontWeight: "300",
     letterSpacing: "1px",
+    [sizes.down("sm")]: {
+      fontSize: "4rem",
+    },
   },
   h4: {
     fontSize: "1.8rem",
     fontWeight: "300",
     marginBottom: "5px",
+    [sizes.down("sm")]: {
+      fontSize: "2rem",
+    },
   },
   p: {
     fontSize: "2rem",
     fontWeight: "300",
     color: "#f5f5f7",
     opacity: "0.9",
-    letterSpacing: "0.4px",
     lineHeight: "2.9rem",
+    [sizes.down("sm")]: {
+      letterSpacing: "0",
+    },
+    "& span": {
+      [sizes.up("sm")]: {
+        display: "none",
+      },
+    },
   },
   s1: {
     letterSpacing: "1.8px",
+    [sizes.down("sm")]: {
+      letterSpacing: "1.2px",
+    },
   },
   s2: {
     letterSpacing: "-1px",
@@ -48,6 +67,10 @@ const useStyles = makeStyles({
     fontSize: "1.4rem",
     fontWeight: "300",
     letterSpacing: "1.3px",
+    [sizes.down("sm")]: {
+      fontSize: "1.6rem",
+      letterSpacing: "0.9px",
+    },
   },
   philosophyContainer: {
     width: "100%",
@@ -72,9 +95,6 @@ const useStyles = makeStyles({
     [sizes.down("md")]: {
       alignItems: "center",
       textAlign: "center",
-    },
-    [sizes.down("sm")]: {
-      width: "75%",
     },
   },
   tiltsContainer: {
@@ -111,7 +131,6 @@ const useStyles = makeStyles({
     overflow: "hidden",
     [sizes.down("md")]: {
       width: "100%",
-      height: "30rem",
       "&:not(:last-of-type)": {
         marginBottom: "3rem",
       },
@@ -138,6 +157,10 @@ const useStyles = makeStyles({
       filter: "grayscale(1)",
       transform: "scale(1.2)",
       transition: "all 0.25s ease-out",
+      [sizes.down("md")]: {
+        filter: "grayscale(0)",
+        transform: "scale(1.1)",
+      },
     },
     "&:hover": {
       "& img": {
@@ -159,6 +182,15 @@ const useStyles = makeStyles({
     width: "75%",
     margin: "2.5rem auto",
     textAlign: "justify",
+    "@media (max-width: 1302px)": {
+      width: "85%",
+    },
+    "@media (max-width: 1038px)": {
+      width: "90%",
+    },
+    [sizes.down("md")]: {
+      width: "80%",
+    },
   },
   list: {
     listStyle: "none",
@@ -168,14 +200,17 @@ const useStyles = makeStyles({
     display: "flex",
     alignItems: "center",
     gap: "1rem",
+    "&:not(:last-of-type)": {
+      marginBottom: "1.05rem",
+    },
     "& span": {
       borderBottom: "1px solid transparent",
       "&:hover": {
         borderBottom: "1px solid currentColor",
+        [sizes.down("md")]: {
+          borderBottom: "1px solid transparent",
+        },
       },
-    },
-    "&:not(:last-of-type)": {
-      marginBottom: "1.05rem",
     },
   },
   itemIcon: {
