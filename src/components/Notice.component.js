@@ -1,4 +1,5 @@
 import React, { useState, useEffect, Fragment } from "react";
+import { nanoid } from "nanoid";
 import useStyles from "../styles/Notice.styles";
 import Loader from "./Loader.component";
 import Footer from "./Footer.component";
@@ -24,7 +25,7 @@ function Notice({ match }) {
   if (!loader) {
     const bodyArr = notice.body.split("\r\n");
     const body = bodyArr.map((sentence, i) => (
-      <p>
+      <p key={nanoid(12)}>
         {sentence}
         {i < bodyArr.length - 1 && <br />}
       </p>

@@ -2,11 +2,14 @@ import { makeStyles } from "@material-ui/styles";
 
 const useStyles = makeStyles({
   Footer: {
-    width: "100%",
-    height: "5rem",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+    padding: "3rem 0",
+    textAlign: "center",
+    fontSize: "1.4rem",
+    fontWeight: "300",
+    lineHeight: "2.2rem",
+    "& span": {
+      fontWeight: "400",
+    },
   },
 });
 

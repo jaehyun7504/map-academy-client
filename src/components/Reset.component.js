@@ -22,7 +22,7 @@ function Reset({ show, submit, hideReset }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     submit(formData);
-    document.getElementById("email").blur();
+    document.getElementById("resetEmail").blur();
     setFormData({
       email: "",
     });
@@ -42,7 +42,7 @@ function Reset({ show, submit, hideReset }) {
           <i className="fas fa-times" />
         </div>
         <TextValidator
-          id="email"
+          id="resetEmail"
           className={classes.input}
           label="Email"
           onChange={handleChange}

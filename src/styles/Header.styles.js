@@ -28,7 +28,7 @@ const useStyles = makeStyles({
   },
   button: {
     padding: "0.6rem 1rem",
-    backgroundImage: "linear-gradient(to top, #0575e6, #021b79)",
+    backgroundImage: "linear-gradient(to bottom, #0575e6, #021b79)",
     border: "0",
     borderRadius: "3px",
     fontSize: "1.35rem",
@@ -37,7 +37,7 @@ const useStyles = makeStyles({
     cursor: "pointer",
     "&:hover": {
       backgroundImage:
-        "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), linear-gradient(to top, #0575e6, #021b79)",
+        "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), linear-gradient(to bottom, #0575e6, #021b79)",
     },
     "&:active": {
       backgroundImage: "none",
