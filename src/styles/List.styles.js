@@ -4,10 +4,11 @@ import sizes from "./_sizes";
 const useStyles = makeStyles({
   List: {
     position: "absolute",
-    top: 0,
+    top: "0",
     left: 0,
     width: "100%",
     height: "calc(100vh - 5rem)",
+    paddingTop: "4.4rem",
   },
   container: {
     position: "relative",

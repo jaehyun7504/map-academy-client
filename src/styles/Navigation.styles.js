@@ -4,6 +4,7 @@ import sizes from "./_sizes";
 const useStyles = makeStyles({
   Navigation: {
     width: "33.33%",
+    marginLeft: "-9rem",
     [sizes.down("md")]: {
       display: "none",
     },
