@@ -34,6 +34,7 @@ const useStyles = makeStyles({
     fontSize: "1.35rem",
     color: "#f5f5f7",
     opacity: "0.9",
+    outline: "none",
     cursor: "pointer",
     "&:hover": {
       backgroundImage:

@@ -30,10 +30,10 @@ function Item({ type, item, i, p, deleteItem, match, history }) {
   if (isAuth) {
     button = (
       <>
-        <button className={classes.updateBtn} onClick={handleUpdate}>
+        <button className={classes.button} onClick={handleUpdate}>
           수정
         </button>
-        <button className={classes.deleteBtn} onClick={handleDelete}>
+        <button className={classes.button} onClick={handleDelete}>
           삭제
         </button>
       </>
@@ -45,7 +45,9 @@ function Item({ type, item, i, p, deleteItem, match, history }) {
       <td className={classes.col}>{order}</td>
       <td className={classes.col}>
         <div className={classes.container}>
-          <Link to={`${match.url}/${item._id}`}>{item.title}</Link>
+          <Link className={classes.link} to={`${match.url}/${item._id}`}>
+            {item.title}
+          </Link>
         </div>
         {button}
       </td>

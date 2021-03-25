@@ -74,12 +74,12 @@ function List({ type, location, history }) {
         <table className={classes.table}>
           <thead>
             <tr className={classes.row}>
-              <th className={classes.col}></th>
+              <th className={classes.col}>#</th>
               <th className={classes.col}>제목</th>
               <th className={classes.col}>작성일</th>
             </tr>
           </thead>
-          <tbody>{rows}</tbody>
+          <tbody className={classes.body}>{rows}</tbody>
         </table>
         {prevBtn}
         {nextBtn}
