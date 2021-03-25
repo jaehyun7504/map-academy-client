@@ -55,12 +55,13 @@ const useStyles = makeStyles({
     },
   },
   s1: {
-    letterSpacing: "1.8px",
+    letterSpacing: "5.6px",
     [sizes.down("sm")]: {
-      letterSpacing: "1.2px",
+      letterSpacing: "4.8px",
     },
   },
   s2: {
+    marginLeft: "-6px",
     letterSpacing: "-1px",
   },
   meaning: {

@@ -88,9 +88,7 @@ function About() {
             <div className={classes.box}>
               <h4 className={classes.h4}>교육 목표</h4>
               <h2 className={classes.h2}>
-                <span className={classes.s1}>
-                  올바른&nbsp;&nbsp;&nbsp;인성의
-                </span>
+                <span className={classes.s1}>올바른 인성의</span>
                 <br />
                 <span className={classes.s2}>창의적 인재 육성</span>
               </h2>
