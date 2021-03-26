@@ -43,13 +43,10 @@ function Header() {
         if (data.message === "error") {
           return alert(data.error);
         }
-        tDispatch({
-          type: "CREATE",
-          token: data.data.token,
-        });
-        aDispatch({
-          type: "TOGGLE",
-        });
+        tDispatch({ type: "CREATE", token: data.data.token });
+        aDispatch({ type: "TOGGLE" });
+        window.localStorage.setItem("token", data.data.token);
+        window.localStorage.setItem("isAuth", true);
         setShow(!show);
       })
       .catch((err) => console.error(err));
@@ -78,6 +75,8 @@ function Header() {
   const handleSignout = () => {
     tDispatch({ type: "DELETE" });
     aDispatch({ type: "TOGGLE" });
+    window.localStorage.removeItem("token");
+    window.localStorage.removeItem("isAuth");
   };
 
   return (
