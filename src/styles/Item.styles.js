@@ -22,27 +22,15 @@ const useStyles = makeStyles({
     },
   },
   container: {
-    width: "100%",
+    width: "60vw",
     padding: "9px",
     whiteSpace: "nowrap",
     overflow: "hidden",
     textOverflow: "ellipsis",
     textAlign: "justify",
     marginRight: "auto",
-    [sizes.down("xl")]: {
-      width: "71rem",
-    },
-    [sizes.down("lg")]: {
-      width: "58rem",
-    },
-    [sizes.down("md")]: {
-      width: "41rem",
-    },
     [sizes.down("sm")]: {
-      width: "42rem",
-    },
-    [sizes.down("xs")]: {
-      width: "26rem",
+      width: "78.5vw",
     },
   },
   link: {

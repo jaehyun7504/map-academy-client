@@ -17,7 +17,7 @@ const useStyles = makeStyles({
     margin: "0 auto",
     padding: "5rem 0",
     [sizes.down("sm")]: {
-      width: "80%",
+      width: "79%",
     },
   },
   table: {
@@ -51,7 +51,8 @@ const useStyles = makeStyles({
     "&:nth-of-type(2)": {
       width: "80%",
       [sizes.down("sm")]: {
-        display: "100%",
+        width: "100%",
+        borderRadius: "10px",
       },
     },
     "&:nth-of-type(3)": {
