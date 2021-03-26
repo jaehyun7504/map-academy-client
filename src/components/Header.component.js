@@ -31,7 +31,7 @@ function Header() {
   const hideReset = () => setReset(false);
 
   const submit = (input) => {
-    fetch("/api/login", {
+    fetch("https://www.mapacademyapi.com/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -52,7 +52,7 @@ function Header() {
       .catch((err) => console.error(err));
   };
   const submitReset = (input) => {
-    fetch("/api/reset", {
+    fetch("https://www.mapacademyapi.com/api/reset", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

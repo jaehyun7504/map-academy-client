@@ -16,7 +16,7 @@ function Item({ type, item, i, p, deleteItem, match, history }) {
     history.push(`/update/${type}/${item._id}`);
   };
   const handleDelete = () => {
-    fetch(`api/${type}/${item._id}`, {
+    fetch(`https://www.mapacademyapi.com/api/${type}/${item._id}`, {
       method: "DELETE",
       headers: {
         Authorization: "Bearer " + token,

@@ -13,7 +13,7 @@ function Article({ match }) {
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
-    fetch(`/api/articles/${match.params.id}`)
+    fetch(`https://www.mapacademyapi.com/api/articles/${match.params.id}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.message === "error") {

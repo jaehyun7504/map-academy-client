@@ -11,7 +11,7 @@ function Notice({ match }) {
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
-    fetch(`/api/notices/${match.params.id}`)
+    fetch(`https://www.mapacademyapi.com/api/notices/${match.params.id}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.message === "error") {

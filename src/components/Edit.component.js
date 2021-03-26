@@ -16,7 +16,7 @@ function Edit({ hasImage, isUpdating, match, history }) {
 
   useEffect(() => {
     if (isUpdating) {
-      fetch(`/api/${content}/${match.params.id}`)
+      fetch(`https://www.mapacademyapi.com/api/${content}/${match.params.id}`)
         .then((res) => res.json())
         .then((data) => {
           setState({
@@ -36,13 +36,18 @@ function Edit({ hasImage, isUpdating, match, history }) {
   };
 
   const editContent = (formData) => {
-    fetch(`/api/${content}/${isUpdating ? match.params.id : ""}`, {
-      method: !isUpdating ? "POST" : "PATCH",
-      headers: {
-        Authorization: "Bearer " + token,
-      },
-      body: formData,
-    })
+    fetch(
+      `https://www.mapacademyapi.com/api/${content}/${
+        isUpdating ? match.params.id : ""
+      }`,
+      {
+        method: !isUpdating ? "POST" : "PATCH",
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+        body: formData,
+      }
+    )
       .then((res) => {
         setState({
           title: "",

@@ -14,7 +14,11 @@ function List({ type, location, history }) {
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
-    fetch(`/api/${type}/${location.search ? `${location.search}` : ""}`)
+    fetch(
+      `https://www.mapacademyapi.com/api/${type}/${
+        location.search ? `${location.search}` : ""
+      }`
+    )
       .then((res) => res.json())
       .then((data) => {
         setItems(data.data);
