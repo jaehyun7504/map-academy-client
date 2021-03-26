@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Fragment } from "react";
+import { Redirect } from "react-router-dom";
 import { nanoid } from "nanoid";
-import useStyles from "../styles/Notice.styles";
+import useStyles from "../styles/Doc.styles";
 import Loader from "./Loader.component";
 import Footer from "./Footer.component";
 
@@ -13,6 +14,9 @@ function Notice({ match }) {
     fetch(`/api/notices/${match.params.id}`)
       .then((res) => res.json())
       .then((data) => {
+        if (data.message === "error") {
+          return setNotice({ isError: true });
+        }
         setNotice({
           title: data.data.title,
           body: data.data.body,
@@ -21,29 +25,29 @@ function Notice({ match }) {
       });
   }, [match.params.id]);
 
+  if (notice.isError) {
+    return <Redirect to="/about" />;
+  }
+
   let content = <Loader />;
   if (!loader) {
     const bodyArr = notice.body.split("\r\n");
     const body = bodyArr.map((sentence, i) => (
-      <p key={nanoid(12)}>
-        {sentence}
-        {i < bodyArr.length - 1 && <br />}
+      <p className={classes.body} key={nanoid(12)}>
+        {sentence ? sentence : <span className={classes.lineBreak} />}
       </p>
     ));
     content = (
       <Fragment>
-        <h1>{notice.title}</h1>
-        <hr />
+        <h1 className={classes.title}>{notice.title}</h1>
+        <hr className={classes.horizon} />
         {body}
-        {notice.imageUrl && (
-          <img src={`/${notice.imageUrl}`} alt={notice.title} />
-        )}
       </Fragment>
     );
   }
 
   return (
-    <div className={classes.Notice}>
+    <div className={classes.Doc}>
       <div className={classes.container}>{content}</div>
       <Footer />
     </div>

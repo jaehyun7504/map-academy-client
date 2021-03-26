@@ -12,7 +12,7 @@ const useStyles = makeStyles({
       fontWeight: "400",
     },
     [sizes.down("sm")]: {
-      fontSize: "1.5rem",
+      fontSize: "1.6rem",
     },
   },
 });

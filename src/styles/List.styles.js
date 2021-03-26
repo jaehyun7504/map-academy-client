@@ -65,7 +65,7 @@ const useStyles = makeStyles({
   },
   button: {
     position: "absolute",
-    bottom: "0",
+    bottom: "3.4px",
     left: "50%",
     transform: "translateX(-50%)",
     padding: "3px 6px",

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Fragment } from "react";
+import { Redirect } from "react-router-dom";
 import { nanoid } from "nanoid";
-import useStyles from "../styles/Article.styles";
+import useStyles from "../styles/Doc.styles";
 import Loader from "./Loader.component";
 import Footer from "./Footer.component";
 
@@ -15,6 +16,9 @@ function Article({ match }) {
     fetch(`/api/articles/${match.params.id}`)
       .then((res) => res.json())
       .then((data) => {
+        if (data.message === "error") {
+          return setArticle({ isError: true });
+        }
         setArticle({
           title: data.data.title,
           body: data.data.body,
@@ -24,22 +28,30 @@ function Article({ match }) {
       });
   }, [match.params.id]);
 
+  if (article.isError) {
+    return <Redirect to="/about" />;
+  }
+
   let content = <Loader />;
   if (!loader) {
     const bodyArr = article.body.split("\r\n");
     const body = bodyArr.map((sentence, i) => (
-      <p key={nanoid(12)}>
-        {sentence}
-        {i < bodyArr.length - 1 && <br />}
+      <p className={classes.body} key={nanoid(12)}>
+        {sentence ? sentence : <span className={classes.lineBreak} />}
       </p>
     ));
     const image = article.imageUrl ? (
-      <img src={`${IMAGE_URL}${article.imageUrl}`} alt={article.title} />
+      <img
+        className={classes.image}
+        src={`${IMAGE_URL}${article.imageUrl}`}
+        alt={article.title}
+      />
     ) : null;
     content = (
       <Fragment>
-        <h1>{article.title}</h1>
-        <hr />
+        <h1 className={classes.title}>{article.title}</h1>
+        <p></p>
+        <hr className={classes.horizon} />
         {body}
         {image}
       </Fragment>
@@ -47,7 +59,7 @@ function Article({ match }) {
   }
 
   return (
-    <div className={classes.Article}>
+    <div className={classes.Doc}>
       <div className={classes.container}>{content}</div>
       <Footer />
     </div>

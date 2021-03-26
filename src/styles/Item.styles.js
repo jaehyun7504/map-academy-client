@@ -10,19 +10,20 @@ const useStyles = makeStyles({
     height: "100%",
     border: "1px solid transparent",
     "&:nth-of-type(1), &:nth-of-type(3)": {
-      fontSize: "1.4rem",
+      fontSize: "14px",
       [sizes.down("sm")]: {
         display: "none",
       },
     },
     "&:nth-of-type(2)": {
-      fontSize: "1.6rem",
+      fontSize: "16px",
       display: "flex",
       alignItems: "center",
     },
   },
   container: {
-    width: "60vw",
+    position: "relative",
+    width: "59.5vw",
     padding: "9px",
     whiteSpace: "nowrap",
     overflow: "hidden",
@@ -42,6 +43,9 @@ const useStyles = makeStyles({
     },
   },
   button: {
+    position: "absolute",
+    top: "50%",
+    transform: "translateY(-50%)",
     padding: "3px 6px",
     backgroundImage: "linear-gradient(to bottom, #0575e6, #021b79)",
     border: "0",
@@ -51,8 +55,11 @@ const useStyles = makeStyles({
     opacity: "0.9",
     outline: "none",
     cursor: "pointer",
-    "&:not(:last-of-type)": {
-      marginRight: "6px",
+    "&:first-of-type": {
+      right: "4.6rem",
+    },
+    "&:last-of-type": {
+      right: "0",
     },
     "&:hover": {
       backgroundImage:

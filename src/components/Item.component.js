@@ -48,8 +48,8 @@ function Item({ type, item, i, p, deleteItem, match, history }) {
           <Link className={classes.link} to={`${match.url}/${item._id}`}>
             {item.title}
           </Link>
+          {button}
         </div>
-        {button}
       </td>
       <td className={classes.col}>{item.date}</td>
     </tr>

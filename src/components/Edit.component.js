@@ -59,6 +59,9 @@ function Edit({ hasImage, isUpdating, match, history }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!state.title || !state.body) {
+      return alert("내용을 입력해 주세요.");
+    }
     const formData = new FormData();
     formData.append("title", state.title);
     formData.append("body", state.body);
@@ -85,6 +88,7 @@ function Edit({ hasImage, isUpdating, match, history }) {
           type="text"
           name="title"
           value={state.title}
+          placeholder="제목을 입력하세요."
           onChange={handleChange}
         />
         <textarea
@@ -92,6 +96,7 @@ function Edit({ hasImage, isUpdating, match, history }) {
           type="text"
           name="body"
           value={state.body}
+          placeholder="본문을 입력하세요."
           onChange={handleChange}
         />
         {imageInput}

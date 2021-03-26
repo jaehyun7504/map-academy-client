@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: "36rem",
-    height: "27.5rem",
+    height: "32rem",
     backgroundColor: "#e6e6e6",
     borderRadius: "7px",
     boxShadow: "0 2px 10px 10px rgba(0, 0, 0, 0.1)",
