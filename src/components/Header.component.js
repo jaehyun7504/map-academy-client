@@ -81,7 +81,7 @@ function Header({ history }) {
       history.location.pathname.startsWith('/create') ||
       history.location.pathname.startsWith('/update')
     ) {
-      history.push('/about');
+      history.replace('/about');
     }
   };
 
