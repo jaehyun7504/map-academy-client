@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Link, Redirect, withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { TokenDispatchContext } from '../contexts/token.context';
 import {
   IsAuthContext,
@@ -81,7 +81,7 @@ function Header({ history }) {
       history.location.pathname.startsWith('/create') ||
       history.location.pathname.startsWith('/update')
     ) {
-      return <Redirect to="/about" />;
+      history.push('/about');
     }
   };
 
