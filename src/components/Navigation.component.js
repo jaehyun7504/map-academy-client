@@ -32,7 +32,7 @@ function Navigation() {
             activeClassName={classes.linkActive}
             to="/articles"
           >
-            사설
+            글모음
           </NavLink>
         </li>
         <li className={classes.item}>

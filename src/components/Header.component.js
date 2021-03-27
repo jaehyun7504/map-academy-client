@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { TokenDispatchContext } from "../contexts/token.context";
 import {
   IsAuthContext,
@@ -11,7 +11,7 @@ import Login from "./Login.component";
 import Reset from "./Reset.component";
 import Drawer from "./Drawer.component";
 
-function Header() {
+function Header({ history }) {
   const tDispatch = useContext(TokenDispatchContext);
   const isAuth = useContext(IsAuthContext);
   const aDispatch = useContext(IsAuthDispatchContext);
@@ -77,6 +77,7 @@ function Header() {
     aDispatch({ type: "TOGGLE" });
     window.localStorage.removeItem("token");
     window.localStorage.removeItem("isAuth");
+    history.push("/about");
   };
 
   return (
@@ -115,4 +116,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default withRouter(Header);
