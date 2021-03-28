@@ -1,10 +1,9 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import useStyles from "../styles/Navigation.styles";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import useStyles from '../styles/Navigation.styles';
 
 function Navigation() {
   const classes = useStyles();
-  const clickHandler = () => alert("준비 중입니다.");
   return (
     <nav className={classes.Navigation}>
       <ul className={classes.list}>
@@ -34,11 +33,6 @@ function Navigation() {
           >
             글모음
           </NavLink>
-        </li>
-        <li className={classes.item}>
-          <p className={classes.link} onClick={clickHandler}>
-            특강
-          </p>
         </li>
       </ul>
     </nav>
