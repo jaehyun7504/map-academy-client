@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useContext } from "react";
-import useStyles from "../styles/List.styles";
-import { IsAuthContext } from "../contexts/isAuth.context";
-import Loader from "./Loader.component";
-import Item from "./Item.component";
-import Pagination from "./Pagination.component";
-import Footer from "./Footer.component";
+import React, { useState, useEffect, useContext } from 'react';
+import useStyles from '../styles/List.styles';
+import { IsAuthContext } from '../contexts/isAuth.context';
+import Loader from './Loader.component';
+import Item from './Item.component';
+import Pagination from './Pagination.component';
+import Footer from './Footer.component';
 
 function List({ type, location, history }) {
   const isAuth = useContext(IsAuthContext);
@@ -16,21 +16,21 @@ function List({ type, location, history }) {
   useEffect(() => {
     fetch(
       `https://www.mapacademyapi.com/api/${type}/${
-        location.search ? `${location.search}` : ""
+        location.search ? `${location.search}` : ''
       }`
     )
-      .then((res) => res.json())
-      .then((data) => {
+      .then(res => res.json())
+      .then(data => {
         setItems(data.data);
         setLoader(false);
       })
-      .catch((err) => console.error(err));
+      .catch(err => console.error(err));
   }, [type, location.search]);
 
-  const deleteItem = (id) => {
+  const deleteItem = id => {
     const newItems = {
       ...items,
-      [type]: items[type].filter((item) => item._id !== id),
+      [type]: items[type].filter(item => item._id !== id),
     };
     setItems(newItems);
   };
