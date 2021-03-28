@@ -14,7 +14,6 @@ function MenuDrawer(props) {
     { name: '학원 소개', link: '/about' },
     { name: '공지 사항', link: '/notices' },
     { name: '글모음', link: '/articles' },
-    { name: '특강', link: '/lectures' },
   ];
   const toggleDrawer = open => event => {
     if (
